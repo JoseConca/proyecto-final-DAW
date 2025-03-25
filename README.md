@@ -22,13 +22,16 @@ Este proyecto fue realizado como parte del ciclo superior de Desarrollo de Aplic
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/JoseConca/proyecto-final-DAW.git
-
-2. Instala las dependencias:
+2. Entra en la carpeta del proyecto
+   ```bash
+   cd .\proyecto-final-DAW\
+   
+3. Instala las dependencias:
     ```bash
-    pip install -r proyecto-final-DAW/requirements.txt
+    pip install -r requirements.txt
 
-3. Ejecuta la aplicación:
+4. Ejecuta la aplicación:
     ```bash
     uvicorn main:app --reload
 
-La aplicación estará disponible en http://127.0.0.1:8000.
+La aplicación estará disponible en http://127.0.0.1:8000
