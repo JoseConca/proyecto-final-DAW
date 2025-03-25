@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Mascotas perdidas</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', path='/script.js') }}"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                
+                {% if is_authenticated is sameas true%}
+                <li><a href="/">Volver</a></li>
+                {% else %}
+                <li><a href="/login">Volver</a></li>
+                {% endif %}
+                
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Lista de mascotas perdidas</h1>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Color</th>
+                        <th>Dueño</th>
+                        <th>Fecha de pérdida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pet in lista %}
+                    <tr>
+                        <td>{{ pet.nombre }}</td>
+                        <td>{{ pet.tipo }}</td>
+                        <td>{{ pet.color }}</td>
+                        <td>{{ pet.dueno }}</td>
+                        <td>{{ pet.fecha }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find My Pet</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                {% if is_authenticated is sameas true%}
+                <li><a href="/avistamiento">Registrar avistamiento</a></li>
+                <!-- Código para facilitar la depuración
+                 <li><a href="/show-users">Mostrar usuarios</a></li>
+                -->
+                {% endif %}
+                {% if is_owner %}
+                <li><a href="/create-pet">Informar mascota</a></li>
+                <li><a href="/show-own-pets">Consultar tus mascotas</a></li>
+
+                {% endif %}
+                <li><a href="/show-pets">Ver mascotas perdidas</a></li>
+                {% if is_authenticated is sameas true%}
+                <li><a href="/logout">Cerrar sesión</a></li>
+                {% else %}
+                <li><a href="/login">Iniciar sesión</a></li>
+                <li><a href="/create-user">Registrarse</a></li>
+
+                {% endif %}
+
+
+            </ul>
+        </div>
+        <!-- Usado para depuración
+         <p>is_authenticated: {{ is_authenticated }}</p>
+        <p>Type: {{ is_authenticated.__class__.__name__ }}</p>
+        -->
+        <div class="content">
+            {% if is_authenticated %}
+            <h1>¡Hola, {{ user }}!</h1>
+            <h1>{{ message }}</h1>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

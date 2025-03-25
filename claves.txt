@@ -1,0 +1,3 @@
+KEY GOOGLE MAPS:
+    /templates/mapa_avistamientos.html 9
+    /templates/avistamiento.html 8

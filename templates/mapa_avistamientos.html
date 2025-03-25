@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Avistamientos</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key= {PON AQUI TU API KEY} &libraries=places" defer></script>
+    <!-- se crea la variable en el html para que la coja jinja2 -->
+    <script>
+        var avistamientos = {{ avistamientos | tojson | safe }};
+    </script> 
+    <script src="{{ url_for('static', path='/mapa_avistamientos.js') }}" defer></script>
+    <script src="{{ url_for('static', path='/obtener_direccion_coord.js') }}" defer></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="/show-own-pets">Volver</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            {% if avistamientos %}
+            <h1>Mapa de Avistamientos</h1>
+            <div id="mapa" class="map-placeholder" style="height: 400px; margin-top: 20px;"></div>
+                <ul class="lista-avist">
+                    {% for avist in avistamientos %}
+                        <li>
+                            <strong>Fecha:</strong> {{ avist.fecha }}<br>
+                            <strong>Lugar:</strong> <span id="lugar-{{ loop.index0 }}">Obteniendo ubicación...</span><br>
+                            <strong>Descripción:</strong> {{ avist.descripcion }}<br>
+                        </li>
+                        <br>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <strong><p style="color: red;"> {{ error }}</p></strong>
+            {% endif %}
+
+        </div>
+    </div>
+</body>
+</html>

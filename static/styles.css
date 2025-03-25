@@ -1,0 +1,266 @@
+/* ==========================
+   ESTILOS GENERALES
+   ========================== */
+
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* ==========================
+   LAYOUT PRINCIPAL
+   ========================== */
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ==========================
+   SIDEBAR (MENÚ)
+   ========================== */
+
+.sidebar {
+    width: 250px;
+    background: #333;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 10px;
+    background: #444;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.sidebar ul li a:hover {
+    background: #555;
+}
+
+/* ==========================
+   CONTENIDO PRINCIPAL
+   ========================== */
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* ==========================
+   TABLAS
+   ========================== */
+
+   .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.styled-table thead {
+    background: #007bff;
+    color: white;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+.styled-table a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.styled-table a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* ==========================
+   FORMULARIOS
+   ========================== */
+
+form {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de cada campo del formulario */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Botón del formulario */
+form button {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background: #218838;
+}
+
+form .eliminar-pet-button{
+    font-weight: bold;
+    width: 100%;
+    padding: 5px;
+    background: #28a745;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 0px;
+}
+form .eliminar-pet-button:hover {
+    background: red;
+}
+
+.eliminar-pet-form{
+    max-width: 30px;
+    padding: 0px;
+}
+
+
+/* ==========================
+   MENSAJES DE ÉXITO Y ERROR
+   ========================== */
+
+.success {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+#error-direccion {
+    color: red;
+    display: none;
+}
+#error {
+    color: red;
+    display: none;
+}
+
+/* ==========================
+   MAPA
+   ========================== */
+
+.map-placeholder {
+    height: 400px;
+    margin-top: 20px;
+}
+.lista-avist{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+/* ==========================
+   MODAL (VENTANA EMERGENTE)
+   ========================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.modal-content button:hover {
+    background: #0056b3;
+}

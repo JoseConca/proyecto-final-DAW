@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informar Mascota Perdida</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="/">Volver</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Informar mascota perdida</h1>
+            <form action="/create-pet" method="post">
+                <label for="nombre">Nombre de la mascota:</label>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+
+                <label for="tipo">Tipo:</label>
+                <input type="text" id="tipo" name="tipo" required><br><br>
+
+                <label for="raza">Raza:</label>
+                <input type="text" id="raza" name="raza"><br><br>
+
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="color" required><br><br>
+            
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
