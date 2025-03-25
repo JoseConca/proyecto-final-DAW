@@ -25,7 +25,7 @@ Este proyecto fue realizado como parte del ciclo superior de Desarrollo de Aplic
 
 2. Instala las dependencias:
     ```bash
-    pip install -r requirements.txt
+    pip install -r proyecto-final-DAW/requirements.txt
 
 3. Ejecuta la aplicación:
     ```bash
